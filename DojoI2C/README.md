@@ -1,6 +1,8 @@
-O objetivo deste projeto é interligar em uma rede I2C vários Arduinos com o Garoa Dojo Shield para permitir a geração de animações coordenadas. 
+O objetivo deste projeto é interligar em uma rede I2C vários Arduinos, com o **Garoa Dojo Shield**, para permitir a geração de animações coordenadas.
 
 https://garoa.net.br/wiki/DojoI2C
+
+## Prova de Conceito
 
 O objetivo da prova de conceito (feita em 11/12/14) foi demonstrar a capacidade de comunicação via I2C entre Arduinos.
 
@@ -10,5 +12,5 @@ O software carregado nos três foi o mesmo. A definição do modo (Master ou Sla
 
 O formato das mensagens foi restringido a um byte. Na escrita do mestre, o byte controle os oito LEDs do display do escravo (sete segmentos mais o ponto decimal). Na leitura do mestre, o escravo informa a leitura do potenciômetro (dividida por 4 para ficar de 0 a 255). A expansão destas mensagens para controlar mais sinais de saída e ler mais entrada (como o LDR no shield) é trivial e fica como exercício para os implementadores futuros.
 
-Como teste, o mestre comanda o display dos escravos (e o seu próprio) com o valor lido do seu potenciômetro (também dividido por quatro) e envia pela serial a leitura dos potenciômetros dos escravos. 
+Como teste, o mestre comanda o display dos escravos (e o seu próprio) com o valor lido do seu potenciômetro (também dividido por quatro) e envia pela serial a leitura dos potenciômetros dos escravos.
 
