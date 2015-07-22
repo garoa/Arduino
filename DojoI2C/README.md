@@ -1,14 +1,14 @@
-O objetivo deste projeto é interligar em uma rede I2C vários Arduinos com o Garoa Dojo Shield para permitir a geração de animações coordenadas. 
+O objetivo deste projeto Ã© interligar em uma rede I2C vÃ¡rios Arduinos com o Garoa Dojo Shield para permitir a geraÃ§Ã£o de animaÃ§Ãµes coordenadas. 
 
 https://garoa.net.br/wiki/DojoI2C
 
-O objetivo da prova de conceito (feita em 11/12/14) foi demonstrar a capacidade de comunicação via I2C entre Arduinos.
+O objetivo da prova de conceito (feita em 11/12/14) foi demonstrar a capacidade de comunicaÃ§Ã£o via I2C entre Arduinos.
 
-O hardware consistiu em três Arduinos (um UNO, um DUEMILINOVE e um MEGA), cada um deles com um Garoa Dojo Shield. Além da interligação de SDA, SCL e GND, foram interligados o +5V, para que a alimentação de todos viesse da USB do mestre (conectado a um PC). Este esquema de alimentação deve ser inapropriado no caso de uma quantidade maiores de Arduinos.
+O hardware consistiu em trÃªs Arduinos (um UNO, um DUEMILINOVE e um MEGA), cada um deles com um Garoa Dojo Shield. AlÃ©m da interligaÃ§Ã£o de SDA, SCL e GND, foram interligados o +5V, para que a alimentaÃ§Ã£o de todos viesse da USB do mestre (conectado a um PC). Este esquema de alimentaÃ§Ã£o deve ser inapropriado no caso de uma quantidade maiores de Arduinos.
 
-O software carregado nos três foi o mesmo. A definição do modo (Master ou Slave) e do endereço (se slave) são armazenadas na EEProm. A configuração é feita através da conexão serial a um PC, por simplificação o endereço é um dígito de 1 a 9.
+O software carregado nos trÃªs foi o mesmo. A definiÃ§Ã£o do modo (Master ou Slave) e do endereÃ§o (se slave) sÃ£o armazenadas na EEProm. A configuraÃ§Ã£o Ã© feita atravÃ©s da conexÃ£o serial a um PC, por simplificaÃ§Ã£o o endereÃ§o Ã© um dÃ­gito de 1 a 9.
 
-O formato das mensagens foi restringido a um byte. Na escrita do mestre, o byte controle os oito LEDs do display do escravo (sete segmentos mais o ponto decimal). Na leitura do mestre, o escravo informa a leitura do potenciômetro (dividida por 4 para ficar de 0 a 255). A expansão destas mensagens para controlar mais sinais de saída e ler mais entrada (como o LDR no shield) é trivial e fica como exercício para os implementadores futuros.
+O formato das mensagens foi restringido a um byte. Na escrita do mestre, o byte controle os oito LEDs do display do escravo (sete segmentos mais o ponto decimal). Na leitura do mestre, o escravo informa a leitura do potenciÃ´metro (dividida por 4 para ficar de 0 a 255). A expansÃ£o destas mensagens para controlar mais sinais de saÃ­da e ler mais entrada (como o LDR no shield) Ã© trivial e fica como exercÃ­cio para os implementadores futuros.
 
-Como teste, o mestre comanda o display dos escravos (e o seu próprio) com o valor lido do seu potenciômetro (também dividido por quatro) e envia pela serial a leitura dos potenciômetros dos escravos. 
+Como teste, o mestre comanda o display dos escravos (e o seu prÃ³prio) com o valor lido do seu potenciÃ´metro (tambÃ©m dividido por quatro) e envia pela serial a leitura dos potenciÃ´metros dos escravos. 
 
